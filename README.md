@@ -42,9 +42,9 @@ Run the command: `terraform apply -var-file="secrets.tfvars"`
 
 ## Verify SSH into EC2 instance and communicate with RDS
 - -**make note of the database_endpoint and database_port
-- run the command: `ssh -i "tutorial_kp.pem" ubuntu@$(terraform output -raw web_public_dns)`
+- run the command: `ssh -i "demo_kp.pem" ubuntu@$(terraform output -raw web_public_dns)`
   if you have issues connecting to EC2 instance, try this command:
-  `ssh  -o 'identitiesOnly yes' -i "tutorial_kp.pem" ubuntu@$(terraform output -raw web_public_dns)`
+  `ssh  -o 'identitiesOnly yes' -i "demo_kp.pem" ubuntu@$(terraform output -raw web_public_dns)`
   if you still have issues, verify that your outbounds rules or firewalls on your local allow external access.
 - Once connected to the EC2 instance, connect to the RDS instance. First install MySQL client
   run the command: `sudo apt-get update -y && sudo apt-get install mysql-client -y`
