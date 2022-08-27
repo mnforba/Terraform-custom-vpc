@@ -18,7 +18,8 @@ Scenario: Your team has been working on a web application that uses a database. 
 
 ### Creating the EC2 Instance
 This is going to contain 3 parts:
-- Creating the key pair. This should be done in the terraform directory on your local. 
+- Creating the key pair. This should be done in the terraform directory on your local.
+  use command: `ssh-keygen -t rsa -b 4096 -m pem -f demo_kp && openssl rsa -in demo_kp -outform pem && mv demo_kp demo_kp.pem && chmod 400 demo_kp.pem` 
   This key should  be made an AWS key pair by adding it to the main.tf file.
 - Creating the EC2 Instance. You can choose your flavor and modify the codes. Here I am 
   using Ubuntu 20.04. Before creating the EC2 instance, you need to create the data object that
